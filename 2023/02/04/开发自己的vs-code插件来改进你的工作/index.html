@@ -6,15 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>一点鑫得</title>
+  <title>开发自己的vs code插件来改进你的工作 | 一点鑫得</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="一点鑫得">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="Visual Studio Code是微软打造的一款开源、跨平台的开发工具，丰富的插件和优秀的使用体验使得越来越多的开发者开始转向VS Code，我也是其中的一员。VS Code的插件都是广大的开发者贡献的，我也想开发一款自己的插件来满足我近期的一个小需求。 满足自己的需求我曾经断断续续地学了几年的编程仍然停留在差不多hello world的水平，始终无法更进一步，直到我摸索着用python写了一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开发自己的vs code插件来改进你的工作">
+<meta property="og:url" content="http://example.com/2023/02/04/%E5%BC%80%E5%8F%91%E8%87%AA%E5%B7%B1%E7%9A%84vs-code%E6%8F%92%E4%BB%B6%E6%9D%A5%E6%94%B9%E8%BF%9B%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C/index.html">
 <meta property="og:site_name" content="一点鑫得">
+<meta property="og:description" content="Visual Studio Code是微软打造的一款开源、跨平台的开发工具，丰富的插件和优秀的使用体验使得越来越多的开发者开始转向VS Code，我也是其中的一员。VS Code的插件都是广大的开发者贡献的，我也想开发一款自己的插件来满足我近期的一个小需求。 满足自己的需求我曾经断断续续地学了几年的编程仍然停留在差不多hello world的水平，始终无法更进一步，直到我摸索着用python写了一">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2023/02/04/%E5%BC%80%E5%8F%91%E8%87%AA%E5%B7%B1%E7%9A%84vs-code%E6%8F%92%E4%BB%B6%E6%9D%A5%E6%94%B9%E8%BF%9B%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C/images/Pasted%20image%2020230204162552.png">
+<meta property="og:image" content="http://example.com/2023/02/04/%E5%BC%80%E5%8F%91%E8%87%AA%E5%B7%B1%E7%9A%84vs-code%E6%8F%92%E4%BB%B6%E6%9D%A5%E6%94%B9%E8%BF%9B%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C/images/%E8%B0%83%E8%AF%95vscode%E6%8F%92%E4%BB%B6.gif">
+<meta property="og:image" content="http://example.com/2023/02/04/%E5%BC%80%E5%8F%91%E8%87%AA%E5%B7%B1%E7%9A%84vs-code%E6%8F%92%E4%BB%B6%E6%9D%A5%E6%94%B9%E8%BF%9B%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C/images/Pasted%20image%2020230204170714.png">
+<meta property="og:image" content="http://example.com/2023/02/04/%E5%BC%80%E5%8F%91%E8%87%AA%E5%B7%B1%E7%9A%84vs-code%E6%8F%92%E4%BB%B6%E6%9D%A5%E6%94%B9%E8%BF%9B%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C/images/Pasted%20image%2020230204175717.png">
+<meta property="og:image" content="http://example.com/2023/02/04/%E5%BC%80%E5%8F%91%E8%87%AA%E5%B7%B1%E7%9A%84vs-code%E6%8F%92%E4%BB%B6%E6%9D%A5%E6%94%B9%E8%BF%9B%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C/images/Pasted%20image%2020230204181336.png">
+<meta property="og:image" content="http://example.com/2023/02/04/%E5%BC%80%E5%8F%91%E8%87%AA%E5%B7%B1%E7%9A%84vs-code%E6%8F%92%E4%BB%B6%E6%9D%A5%E6%94%B9%E8%BF%9B%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C/images/Pasted%20image%2020230204181400.png">
+<meta property="og:image" content="http://example.com/2023/02/04/%E5%BC%80%E5%8F%91%E8%87%AA%E5%B7%B1%E7%9A%84vs-code%E6%8F%92%E4%BB%B6%E6%9D%A5%E6%94%B9%E8%BF%9B%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C/images/Pasted%20image%2020230204181531.png">
+<meta property="og:image" content="http://example.com/2023/02/04/%E5%BC%80%E5%8F%91%E8%87%AA%E5%B7%B1%E7%9A%84vs-code%E6%8F%92%E4%BB%B6%E6%9D%A5%E6%94%B9%E8%BF%9B%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C/images/Pasted%20image%2020230204181901.png">
+<meta property="article:published_time" content="2023-02-04T12:11:07.000Z">
+<meta property="article:modified_time" content="2023-02-04T12:18:44.520Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/02/04/%E5%BC%80%E5%8F%91%E8%87%AA%E5%B7%B1%E7%9A%84vs-code%E6%8F%92%E4%BB%B6%E6%9D%A5%E6%94%B9%E8%BF%9B%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C/images/Pasted%20image%2020230204162552.png">
   
     <link rel="alternative" href="/atom.xml" title="一点鑫得" type="application/atom+xml">
   
@@ -150,16 +163,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-开发自己的vs-code插件来改进你的工作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-开发自己的vs-code插件来改进你的工作" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/02/04/%E5%BC%80%E5%8F%91%E8%87%AA%E5%B7%B1%E7%9A%84vs-code%E6%8F%92%E4%BB%B6%E6%9D%A5%E6%94%B9%E8%BF%9B%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C/">开发自己的vs code插件来改进你的工作</a>
+    <h1 class="article-title" itemprop="name">
+      开发自己的vs code插件来改进你的工作
     </h1>
   
 
@@ -224,6 +235,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -231,16 +263,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/02/04/%E5%BC%80%E5%8F%91%E8%87%AA%E5%B7%B1%E7%9A%84vs-code%E6%8F%92%E4%BB%B6%E6%9D%A5%E6%94%B9%E8%BF%9B%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/02/04/%E5%BC%80%E5%8F%91%E8%87%AA%E5%B7%B1%E7%9A%84vs-code%E6%8F%92%E4%BB%B6%E6%9D%A5%E6%94%B9%E8%BF%9B%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2023/01/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8WebGL%E5%AE%9E%E7%8E%B0%E9%BC%A0%E6%A0%87%E6%96%B9%E5%BC%8F%E7%BB%98%E5%88%B6%E8%BF%9E%E7%BB%AD%E7%9B%B4%E7%BA%BF%E6%AE%B5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何使用WebGL实现鼠标方式绘制连续直线段</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -260,251 +351,14 @@
 
 
 
-
   
-    <article id="post-如何使用WebGL实现鼠标方式绘制连续直线段" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8WebGL%E5%AE%9E%E7%8E%B0%E9%BC%A0%E6%A0%87%E6%96%B9%E5%BC%8F%E7%BB%98%E5%88%B6%E8%BF%9E%E7%BB%AD%E7%9B%B4%E7%BA%BF%E6%AE%B5/">如何使用WebGL实现鼠标方式绘制连续直线段</a>
-    </h1>
   
 
-        
-        <a href="/2023/01/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8WebGL%E5%AE%9E%E7%8E%B0%E9%BC%A0%E6%A0%87%E6%96%B9%E5%BC%8F%E7%BB%98%E5%88%B6%E8%BF%9E%E7%BB%AD%E7%9B%B4%E7%BA%BF%E6%AE%B5/" class="archive-article-date">
-  	<time datetime="2023-01-16T13:27:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本文介绍如何使用WebGL实现使用鼠标绘制连续直线段，假定你对JavaScript和WebGL已有一定的了解，这里重点介绍实现的思路。<br><img src="/images/%E7%BB%98%E5%88%B6%E8%BF%9E%E7%BB%AD%E7%9B%B4%E7%BA%BF.gif" alt="绘制连续直线动画"></p>
-<h3 id="功能设计"><a href="#功能设计" class="headerlink" title="功能设计"></a>功能设计</h3><ol>
-<li>鼠标点击屏幕上某个点开启连续线段的第一个点；</li>
-<li>接着移动鼠标，将实时绘制第一个点和鼠标位置之间的直线段，来实时展示线段的位置变化；</li>
-<li>移动鼠标到合适的位置点击鼠标左键，确定此点为线段的第二个点；</li>
-<li>继续跟踪鼠标的移动以选择下一个点，可以连续不断地按此方式绘制下一个连续线段；</li>
-<li>按下Enter或Esc键结束此次连续线段的绘制。<h3 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h3>我们知道gl.drawArrays(int mode, int first, int count)方法的选择不同的mode会产生不同的绘制效果，参见下图可以发现gl.LINE_STRIP模式可以实现绘制连续线段。<br><img src="/images/Pasted%20image%2020230108110933.png" alt="gl.drawArrays不同模式的效果"><br>首先，监听canvas的鼠标点击事件，将鼠标点击位置的坐标添加到连续线段的坐标点数据中，可以以数组的形式存放；<br>接着，立即触发监听鼠标移动事件，实时跟踪鼠标的移动，可以将鼠标的实时坐标存储在变量中，将连续线段坐标点和实时鼠标坐标点组合的点数据传送到WebGL的缓冲区，使用gl.drawArrays的gl.LINE_STRIP模式绘制这些坐标点以达到绘制连续线段的效果；<br>另外，还需要触发监听键盘按下事件，如果按下了Enter或Esc键则移除鼠标移动事件和键盘事件的监听，清空坐标点数据，结束本次绘制。<br>最后，仅仅通过改变gl.drawArrays的绘制模式还可以实现任意多边形的绘制，有兴趣的话可以自己探索试试。<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3></li>
-</ol>
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="BaPpNPj" data-user="pepperpapa" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a target="_blank" rel="noopener" href="https://codepen.io/pepperpapa/pen/BaPpNPj">
-  webgl-绘制连续直线段</a> by pepperpapa (<a target="_blank" rel="noopener" href="https://codepen.io/pepperpapa">@pepperpapa</a>)
-  on <a target="_blank" rel="noopener" href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/01/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8WebGL%E5%AE%9E%E7%8E%B0%E9%BC%A0%E6%A0%87%E6%96%B9%E5%BC%8F%E7%BB%98%E5%88%B6%E8%BF%9E%E7%BB%AD%E7%9B%B4%E7%BA%BF%E6%AE%B5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-围棋游戏实现的思路" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/16/%E5%9B%B4%E6%A3%8B%E6%B8%B8%E6%88%8F%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%80%9D%E8%B7%AF/">围棋游戏实现的思路</a>
-    </h1>
   
 
-        
-        <a href="/2023/01/16/%E5%9B%B4%E6%A3%8B%E6%B8%B8%E6%88%8F%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%80%9D%E8%B7%AF/" class="archive-article-date">
-  	<time datetime="2023-01-16T12:56:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>如果打算开发一款围棋游戏，该怎么着手去做呢？本文是针对《深度学习与围棋》第三章的python代码进行了思路梳理，是为了加深对作者代码的理解。</p>
-<h3 id="把握围棋游戏的主体流程"><a href="#把握围棋游戏的主体流程" class="headerlink" title="把握围棋游戏的主体流程"></a>把握围棋游戏的主体流程</h3><p>首先你得懂围棋，最好自己会玩，但无需你是围棋高手，哪怕是刚入门的新手也足够了。整体来说，围棋游戏由两位棋手在19x19（也可以是9x9、13x13）个交叉点网格组成的棋盘上轮流落子，最终围地最多的棋手胜出。我们可以尝试通过伪代码的形式来表示围棋游戏的过程。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个棋盘规格为board_size*board_size的新游戏对象</span></span><br><span class="line">game = new_game(board_size)</span><br><span class="line"><span class="comment"># 创建两位棋手（棋手既可以是人也可以是机器人），一方执白棋、另一方执黑棋</span></span><br><span class="line">players = &#123;</span><br><span class="line">  black: new_player(),</span><br><span class="line">  white: new_player(),</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> game.is_over():</span><br><span class="line">  <span class="comment"># 打印棋盘</span></span><br><span class="line">  print_board(game.board)</span><br><span class="line">  <span class="comment"># 棋手选择落子动作，game.next_player表示下一回合棋子的颜色，只有black和white两个选项</span></span><br><span class="line">  move = players[game.next_player].select_move(game)</span><br><span class="line">  <span class="comment"># 打印落子的信息，主要是棋手的颜色、落子位置</span></span><br><span class="line">  print_move(game.next_player, move)</span><br><span class="line">  <span class="comment"># 在棋盘上落子</span></span><br><span class="line">  game = game.applay_move(move)</span><br></pre></td></tr></table></figure>
-
-<p>这部分伪代码虽然十分粗略，它们只是把围棋游戏的过程翻译成了代码的形式而已，根本就没有具体的实现，但是通过这段伪代码我们可以识别出关键的对象和方法。其中new_game用来初始化游戏对象，游戏对象显然需要存储棋盘信息、游戏的状态及历史状态，下回合执子方信息。另外game对象通过is_over方法来判断游戏是否结束，apply_move方法来执行落子动作，因为一旦落子肯定会影响游戏的状态，需要进行处理并返回更新了游戏状态的游戏对象。move表示落子动作，围棋一个回合包含落子、跳过、认输三个选项。print_board、print_move为辅助方法，用来实时刷新围棋棋盘以及棋手的落子信息。</p>
-<h3 id="定义基础的数据类型"><a href="#定义基础的数据类型" class="headerlink" title="定义基础的数据类型"></a>定义基础的数据类型</h3><p>计算机科学就是建立在抽象的基础之上的，操作系统是对计算机硬件的抽象，它屏蔽了硬件的复杂性和多样性，让用户可以以统一的方式操作各种各样的计算机硬件，抽象降低了复杂度，如今的计算机发展就是建立在一级级地抽象基础之上的，让我们不必从初级的层次开始我们的工作。接下来我们要做的是也是建立抽象，围棋游戏就是和棋子、棋盘打交道，我们需要为棋子、棋盘、棋盘上的交叉点、一次回合的动作等建立抽象。</p>
-<ul>
-<li>Player为棋子的抽象，它就是一个枚举类型，让我们可以以易读的方式表示棋子，Player.white表示白棋、Player.black表示黑棋、Player.black.other就是表示白棋<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> enum</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Player</span>(enum.Enum):</span><br><span class="line">    black = <span class="number">1</span></span><br><span class="line">    white = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">other</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> Player.black <span class="keyword">if</span> self == Player.white <span class="keyword">else</span> Player.white</span><br></pre></td></tr></table></figure></li>
-<li>Point是对棋位的抽象，我们知道棋盘的任意一个棋位可以通过行、列来唯一确定，如p=Point(2,3)表示为C2棋位，方便的是可以通过p.row、p.col来访问行列的值，另外还定义了neighbors方法来方便地得到该棋位相邻的四个棋位。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> namedtuple</span><br><span class="line"></span><br><span class="line"><span class="comment"># Point对象来指定落子的位置,如Point(2,3)表示落子在第2行、第3列</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Point</span>(namedtuple(<span class="string">&#x27;Point&#x27;</span>, <span class="string">&#x27;row col&#x27;</span>)):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">neighbors</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            Point(self.row - <span class="number">1</span>, self.col),</span><br><span class="line">            Point(self.row + <span class="number">1</span>, self.col),</span><br><span class="line">            Point(self.row, self.col - <span class="number">1</span>),</span><br><span class="line">            Point(self.row, self.col + <span class="number">1</span>),</span><br><span class="line">        ]</span><br></pre></td></tr></table></figure></li>
-<li>Move是一个回合动作的抽象，每个回合有落子、跳过、认输三个选择<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Move表示落子动作，只包含落子、跳过、认输三种类型的动作</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Move</span>():</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, point=<span class="literal">None</span>, is_pass=<span class="literal">False</span>, is_resign=<span class="literal">False</span></span>):</span><br><span class="line">        <span class="comment"># ^是异或操作，下面的语句表示三个条件只能有一个为真</span></span><br><span class="line">        <span class="keyword">assert</span> (point <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>) ^ is_pass ^ is_resign</span><br><span class="line">        self.point = point</span><br><span class="line">        self.is_play = (self.point <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>)</span><br><span class="line">        self.is_pass = is_pass</span><br><span class="line">        self.is_resign = is_resign</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">play</span>(<span class="params">cls, point</span>):</span><br><span class="line">        <span class="comment"># 在棋盘上落子</span></span><br><span class="line">        <span class="keyword">return</span> Move(point=point)</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pass_turn</span>(<span class="params">cls</span>):</span><br><span class="line">        <span class="comment"># 跳过回合</span></span><br><span class="line">        <span class="keyword">return</span> Move(is_pass=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">resign</span>(<span class="params">cls</span>):</span><br><span class="line">        <span class="comment"># 认输</span></span><br><span class="line">        <span class="keyword">return</span> Move(is_resign=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="棋盘Board类、游戏状态GameState类的实现"><a href="#棋盘Board类、游戏状态GameState类的实现" class="headerlink" title="棋盘Board类、游戏状态GameState类的实现"></a>棋盘Board类、游戏状态GameState类的实现</h3><p>接下来就是利用上面的基本类型来实现棋盘类Board、游戏状态类GameState，Board类表示棋盘、负责落子和吃子的逻辑。GameState表示棋局游戏状态，它负责存储棋盘状态、下一回合执子方、上一回合棋盘状态、上一步的动作。可以这么理解，Board对象表达是当前的棋盘快照，而GameState存储了所有回合的棋盘的快照，也就是说GameState表达了整个围棋游戏的过程，它可以实现围棋的复盘。</p>
-<p>先来实现Board类，但是开始前我们还需要想清楚该怎么跟踪棋盘上棋子的信息，我们知道每个棋位只有三种可能：空位、黑子、白子，最简单直接的办法当然是每个棋位单独保存独立棋子信息即可，但是直观地感觉这种方式并不是好，因为围棋中最重要的是气，棋子连接起来有两个眼算算作活棋，也就是说棋子之间是有联系的。比较好的方式是跟踪棋链，而不是单独的棋子。棋链是棋盘上相连的一片同色棋子，那么我们就需要建立一个棋链的抽象类GoString，它负责跟踪棋链中的棋子以及棋子的气，还提供增加和减少气数的方法。采用棋链的方式，Board获取每个棋位得到将是这个棋位所在的棋链对象。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 棋链表示一组相同颜色且相连的棋子, 跟踪维护自身的气数</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">GoString</span>():</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, color, stones, liberties</span>):</span><br><span class="line">        self.color = color</span><br><span class="line">        self.stones = <span class="built_in">set</span>(stones)</span><br><span class="line">        self.liberties = <span class="built_in">set</span>(liberties)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 减少气数，当对手在point棋位（跟棋链相邻）落子时，棋链需要将point棋位的气减掉以维护棋链气数的正确</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">remove_liberty</span>(<span class="params">self, point</span>):</span><br><span class="line">        self.liberties.remove(point)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 增加气数，当己方吃掉point棋位（跟棋链相邻）的对方棋子时，需要增加该point棋位的气数以维护棋链气数的正确</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">add_liberty</span>(<span class="params">self, point</span>):</span><br><span class="line">        self.liberties.add(point)</span><br><span class="line">    <span class="comment"># 合并两个棋链</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">merge_with</span>(<span class="params">self, go_string</span>):</span><br><span class="line">        <span class="comment"># 返回新的棋链，包含两条棋链上的所有棋子</span></span><br><span class="line">        <span class="comment"># 首先两条棋链的必须是相同颜色的棋子</span></span><br><span class="line">        <span class="keyword">assert</span> go_string.color == self.color</span><br><span class="line">        <span class="comment"># 对于set类型来说，|就是求集合的并集</span></span><br><span class="line">        combines_stones = self.stones | go_string.stones</span><br><span class="line">        <span class="keyword">return</span> GoString(</span><br><span class="line">            self.color, </span><br><span class="line">            combines_stones,</span><br><span class="line">            (self.liberties | go_string.liberties) - combines_stones)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 获取任意交叉点处的气数，装饰器@property的作用是直接允许通过go_string.num_liberties的方式获取气数，</span></span><br><span class="line">    <span class="comment"># 和go_string.num_liberties()等效，不过经过装饰器修饰后num_liberties更像是对象的一个属性值</span></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">num_liberties</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.liberties)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 判断两个棋链是否相同</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__eq__</span>(<span class="params">self, other</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">isinstance</span>(other, GoString) <span class="keyword">and</span> \</span><br><span class="line">            self.color == other.color <span class="keyword">and</span> \</span><br><span class="line">            self.stones == other.stones <span class="keyword">and</span> \</span><br><span class="line">            self.liberties == other.liberties</span><br></pre></td></tr></table></figure>
-<p>接下来，Board类的实现就顺理成章了，Board类最重要的方法是place_stone，负责落子逻辑的实现，其他都是辅助方法。落子后可能发生双方棋子气数的变化或吃掉对方的子，因此落子需要做合并相邻的棋链、减少对方棋链的气、提走对方气为0的棋链的处理，实现这些使用的都是棋链对象提供的方法。另外Board对象的私有变量_grid存储了整个棋盘的棋链信息，它的key值就是每个棋位的坐标Point(row, col)，从这里也可以看出Board对象就是围棋游戏当前回合的一个快照。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 棋盘类,棋盘尺寸由行数和列数两个决定</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Board</span>():</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, num_rows, num_cols</span>):</span><br><span class="line">        self.num_rows = num_rows</span><br><span class="line">        self.num_cols = num_cols</span><br><span class="line">        <span class="comment"># _grid是私有变量，存储棋盘的状态，它是一个用于存储棋链的字典</span></span><br><span class="line">        self._grid = &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># player落子在point棋位</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">place_stone</span>(<span class="params">self, player, point</span>):</span><br><span class="line">        <span class="comment"># point必须在棋盘范围内</span></span><br><span class="line">        <span class="keyword">assert</span> self.is_on_grid(point)</span><br><span class="line">        <span class="comment"># point必须是空棋位才允许落子</span></span><br><span class="line">        <span class="keyword">assert</span> self._grid.get(point) <span class="keyword">is</span> <span class="literal">None</span></span><br><span class="line">        adjacent_same_color = []</span><br><span class="line">        adjacent_opposite_color = []</span><br><span class="line">        liberties = []</span><br><span class="line">        <span class="comment"># 遍历落子位置的相邻棋位</span></span><br><span class="line">        <span class="keyword">for</span> neighbor <span class="keyword">in</span> point.neighbors():</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> self.is_on_grid(neighbor):</span><br><span class="line">                <span class="comment"># 如果相邻棋位已经不再棋盘上则继续下一个</span></span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="comment"># 获取此相邻棋位所在的棋链</span></span><br><span class="line">            neighbor_string = self._grid.get(neighbor)</span><br><span class="line">            <span class="keyword">if</span> neighbor_string <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">                <span class="comment"># 如果是空棋链，则说明落子后，这个相邻棋位是有气的，</span></span><br><span class="line">                <span class="comment"># 需要加入到新棋链的气中</span></span><br><span class="line">                liberties.append(neighbor)</span><br><span class="line">            <span class="keyword">elif</span> neighbor_string.color == player:</span><br><span class="line">                <span class="comment"># 如果相邻棋位有棋子且为己方棋子,则该相邻棋位所在的棋链因point落子需要连接起来</span></span><br><span class="line">                <span class="keyword">if</span> neighbor_string <span class="keyword">not</span> <span class="keyword">in</span> adjacent_same_color:</span><br><span class="line">                    adjacent_same_color.append(neighbor_string)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment"># 否则则表示相邻棋位有棋子且为对方棋子</span></span><br><span class="line">                <span class="keyword">if</span> neighbor_string <span class="keyword">not</span> <span class="keyword">in</span> adjacent_opposite_color:</span><br><span class="line">                    adjacent_opposite_color.append(neighbor_string)</span><br><span class="line">        <span class="comment"># 生成落子位point所在的棋链，初始气数为相邻棋位为空的数量之和</span></span><br><span class="line">        new_string = GoString(player, [point], liberties)</span><br><span class="line">        <span class="comment"># 落子后的三个动作</span></span><br><span class="line">        <span class="comment"># 1. 合并任何相邻同色的棋链</span></span><br><span class="line">        <span class="keyword">for</span> same_color_string <span class="keyword">in</span> adjacent_same_color:</span><br><span class="line">            new_string = new_string.merge_with(same_color_string)</span><br><span class="line">        <span class="comment"># 更新棋盘状态</span></span><br><span class="line">        <span class="keyword">for</span> new_string_point <span class="keyword">in</span> new_string.stones:</span><br><span class="line">            self._grid[new_string_point] = new_string</span><br><span class="line">        <span class="comment"># 2. 减少对方相邻棋链的气</span></span><br><span class="line">        <span class="keyword">for</span> other_color_string <span class="keyword">in</span> adjacent_opposite_color:</span><br><span class="line">            other_color_string.remove_liberty(point)</span><br><span class="line">        <span class="comment"># 3. 提走对方气为0的棋链</span></span><br><span class="line">        <span class="keyword">for</span> other_color_string <span class="keyword">in</span> adjacent_opposite_color:</span><br><span class="line">            <span class="keyword">if</span> other_color_string.num_liberties == <span class="number">0</span>:</span><br><span class="line">                self._remove_string(other_color_string)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 检查落子位是否在棋盘范围内</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">is_on_grid</span>(<span class="params">self, point</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> &lt;= point.row &lt;= self.num_rows <span class="keyword">and</span> \</span><br><span class="line">            <span class="number">1</span> &lt;= point.col &lt;= self.num_cols</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># 获取落子位的内容，如果已落子返回对应的Player对象，否则返回None</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get</span>(<span class="params">self, point</span>):</span><br><span class="line">        <span class="comment"># 获取棋位所在的棋链</span></span><br><span class="line">        string = self._grid.get(point)</span><br><span class="line">        <span class="keyword">if</span> string <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        <span class="keyword">return</span> string.color</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 返回棋位所在的棋链，如果为空返回None</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_go_string</span>(<span class="params">self, point</span>):</span><br><span class="line">        string = self._grid.get(point)</span><br><span class="line">        <span class="keyword">if</span> string <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        <span class="keyword">return</span> string</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 提走棋链所在的棋子</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_remove_string</span>(<span class="params">self, string</span>):</span><br><span class="line">        <span class="comment"># 遍历棋链中的所有棋子</span></span><br><span class="line">        <span class="keyword">for</span> point <span class="keyword">in</span> string.stones:</span><br><span class="line">            <span class="comment"># 遍历该棋子的所有相邻点</span></span><br><span class="line">            <span class="keyword">for</span> neighbor <span class="keyword">in</span> point.neighbors():</span><br><span class="line">                neighbor_string = self._grid.get(neighbor)</span><br><span class="line">                <span class="comment"># 如果相邻棋子所在棋链，则不影响气数，继续下一个相邻点</span></span><br><span class="line">                <span class="keyword">if</span> neighbor_string <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                <span class="comment"># 如果相邻棋子所在棋链不是当前棋链，则相邻棋链的气数加1</span></span><br><span class="line">                <span class="keyword">if</span> neighbor_string <span class="keyword">is</span> <span class="keyword">not</span> string:</span><br><span class="line">                    neighbor_string.add_liberty(point)</span><br><span class="line">            <span class="comment"># 更新棋链上的棋子为空</span></span><br><span class="line">            self._grid[point] = <span class="literal">None</span></span><br></pre></td></tr></table></figure>
-<p>最后是GameState类，它核心的功能是保存了每一个回合的棋盘快照，下一个回合的执子方以及上一步的动作。另外，GameState还负责实现禁止自吃规则、劫争规则的实现，这些规则之所以不在Board中实现，是因为Board类是单个回合的棋盘快照，而禁止自吃和劫争需要多个棋盘快照的信息才能确定是否满足规则，比如禁止自吃需要当前回合棋盘和落子后新的棋盘对比才能判断，而劫争规则则需要与历史棋盘比对，单个的棋盘对象显然不具备这个能力。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 存储围棋游戏的状态</span></span><br><span class="line"><span class="comment"># 游戏状态包括：棋盘棋子的布局、下一个回合的执子方、上一回合的游戏状态、上一步的动作</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">GameState</span>():</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, board, next_player, previous, move</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        self.board = board</span><br><span class="line">        self.next_player = next_player</span><br><span class="line">        self.previous_state = previous</span><br><span class="line">        self.last_move = move</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 执行落子后返回新的GameState对象</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">apply_move</span>(<span class="params">self, move</span>):</span><br><span class="line">        <span class="keyword">if</span> move.is_play:</span><br><span class="line">            next_board = copy.deepcopy(self.board)</span><br><span class="line">            next_board.place_stone(self.next_player, move.point)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            next_board = self.board</span><br><span class="line">        <span class="keyword">return</span> GameState(next_board, self.next_player.other, self, move)</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">new_game</span>(<span class="params">cls, board_size</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">isinstance</span>(board_size, <span class="built_in">int</span>):</span><br><span class="line">            board_size = (board_size, board_size)</span><br><span class="line">        board = Board(*board_size)</span><br><span class="line">        <span class="keyword">return</span> GameState(board, Player.black, <span class="literal">None</span>, <span class="literal">None</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 游戏结束的条件：</span></span><br><span class="line">    <span class="comment"># 玩家认输</span></span><br><span class="line">    <span class="comment"># 连续两个回合选择跳过</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">is_over</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">if</span> self.last_move <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> self.last_move.is_resign:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        second_last_move = self.previous_state.last_move</span><br><span class="line">        <span class="keyword">if</span> second_last_move <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> self.last_move.is_pass <span class="keyword">and</span> second_last_move.is_pass</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 禁止自吃的规则，也就是落子后自己的棋子无气的情况</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">is_move_self_capture</span>(<span class="params">self, player, move</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> move.is_play:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        next_board = copy.deepcopy(self.board)</span><br><span class="line">        next_board.place_stone(player, move.point)</span><br><span class="line">        new_string = next_board.get_go_string(move.point)</span><br><span class="line">        <span class="keyword">return</span> new_string.num_liberties == <span class="number">0</span></span><br><span class="line">    </span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">situation</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> (self.next_player, self.board)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 劫争规则：旗手的一次落子不能让棋盘状态恢复到上一回合的棋盘状态</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">does_move_violate_ko</span>(<span class="params">self, player, move</span>):</span><br><span class="line">        <span class="comment"># 不是落子（跳过或认输）显然不会出现劫争</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> move.is_play:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        next_board = copy.deepcopy(self.board)</span><br><span class="line">        next_board.place_stone(player, move.point)</span><br><span class="line">        next_situation = (player.other, next_board)</span><br><span class="line">        past_state = self.previous_state</span><br><span class="line">        <span class="comment"># <span class="doctag">TODO:</span> 为什么要一直往上找历史游戏状态哪？为什么不是判断上上个回合的状态就可以了吗？</span></span><br><span class="line">        <span class="keyword">while</span> past_state <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">if</span> past_state.situation == next_situation:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            past_state = past_state.previous_state</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 判断落子动作是否合法</span></span><br><span class="line">    <span class="comment"># 1.落子位置必须为空</span></span><br><span class="line">    <span class="comment"># 2.不能自吃</span></span><br><span class="line">    <span class="comment"># 3.符合劫争规则</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">is_valid_move</span>(<span class="params">self, move</span>):</span><br><span class="line">        <span class="keyword">if</span> self.is_over():</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> move.is_pass <span class="keyword">or</span> move.is_resign:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> self.board.get(move.point) <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> \</span><br><span class="line">            <span class="keyword">not</span> self.is_move_self_capture(self.next_player, move) <span class="keyword">and</span> \</span><br><span class="line">            <span class="keyword">not</span> self.does_move_violate_ko(self.next_player, move)</span><br><span class="line">        </span><br></pre></td></tr></table></figure>
-
-<h3 id="开始对弈"><a href="#开始对弈" class="headerlink" title="开始对弈"></a>开始对弈</h3><p>至此，一款围棋游戏的基本逻辑就建立好了（棋盘的显示和落子动作的显示等辅助方法因为比较简单就没有提及），最后就是要实现对弈程序了。可以轻松实现人机对弈以及机器人自我对弈，但是这里的机器人是完全随机选择合法的落子动作，水平是很弱的，要实现更智能的对弈机器人需要大量的工作，但是围棋的基本逻辑并没有改变。下面是机器人自我对弈的示例代码，其他如人机对弈也是类似的，自行查看代码即可。</p>
-<p>随机落子机器人代码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> dlgo.agent.base <span class="keyword">import</span> Agent</span><br><span class="line"><span class="keyword">from</span> dlgo.agent.helpers <span class="keyword">import</span> is_point_an_eye</span><br><span class="line"><span class="keyword">from</span> dlgo.goboard_slow <span class="keyword">import</span> Move</span><br><span class="line"><span class="keyword">from</span> dlgo.gotypes <span class="keyword">import</span> Point</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">RandomBot</span>(<span class="title class_ inherited__">Agent</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">select_move</span>(<span class="params">self, game_state</span>):</span><br><span class="line">        candidates = []</span><br><span class="line">        <span class="comment"># 遍历棋盘棋位，将合法的落子位置加入到candidates</span></span><br><span class="line">        <span class="keyword">for</span> r <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, game_state.board.num_rows + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> c <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, game_state.board.num_cols + <span class="number">1</span>):</span><br><span class="line">                candidate = Point(row=r, col=c)</span><br><span class="line">                <span class="keyword">if</span> game_state.is_valid_move(Move.play(candidate)) <span class="keyword">and</span> \</span><br><span class="line">                    <span class="keyword">not</span> is_point_an_eye(game_state.board, </span><br><span class="line">                                        candidate, </span><br><span class="line">                                        game_state.next_player):</span><br><span class="line">                    candidates.append(candidate)</span><br><span class="line">        <span class="comment"># 可选棋位为空则跳过回合</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> candidates:</span><br><span class="line">            <span class="keyword">return</span> Move.pass_turn()</span><br><span class="line">        <span class="comment"># 随机选择一个可选的棋位落子</span></span><br><span class="line">        <span class="keyword">return</span> Move.play(random.choice(candidates))</span><br></pre></td></tr></table></figure>
-<p>机器人自我对弈代码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dlgo.agent <span class="keyword">import</span> naive</span><br><span class="line"><span class="keyword">from</span> dlgo <span class="keyword">import</span> goboard_slow <span class="keyword">as</span> goboard</span><br><span class="line"><span class="keyword">from</span> dlgo <span class="keyword">import</span> gotypes</span><br><span class="line"><span class="keyword">from</span> dlgo.utils <span class="keyword">import</span> print_board, print_move</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    board_size = <span class="number">9</span></span><br><span class="line">    game = goboard.GameState.new_game(board_size)</span><br><span class="line">    bots = &#123;</span><br><span class="line">        gotypes.Player.black: naive.RandomBot(),</span><br><span class="line">        gotypes.Player.white: naive.RandomBot(),</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">not</span> game.is_over():</span><br><span class="line">        time.sleep(<span class="number">0.5</span>)</span><br><span class="line">        <span class="comment"># 清屏</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">chr</span>(<span class="number">27</span>) + <span class="string">&quot;[2J&quot;</span>)</span><br><span class="line">        <span class="comment"># 打印棋盘</span></span><br><span class="line">        print_board(game.board)</span><br><span class="line">        <span class="comment"># 随机选择落子位置</span></span><br><span class="line">        bot_move = bots[game.next_player].select_move(game)</span><br><span class="line">        <span class="comment"># 打印落子动作信息</span></span><br><span class="line">        print_move(game.next_player, bot_move)</span><br><span class="line">        <span class="comment"># 执行落子动作</span></span><br><span class="line">        game = game.apply_move(bot_move)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-<p>自我对弈终盘结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> 9  x  x  x  x  x  x  x  x  x</span><br><span class="line"> 8  x  x  x  x  x  x  x  .  x</span><br><span class="line"> 7  x  .  x  x  x  x  .  x  x</span><br><span class="line"> 6  x  x  x  .  x  x  x  x  x</span><br><span class="line"> 5  x  x  x  x  .  x  x  x  x</span><br><span class="line"> 4  x  x  x  .  x  x  .  x  x</span><br><span class="line"> 3  x  x  x  x  x  .  x  .  x</span><br><span class="line"> 2  x  x  x  .  x  x  .  x  x</span><br><span class="line"> 1  x  x  x  x  x  x  x  x  x</span><br><span class="line">    A  B  C  D  E  F  G  H  J</span><br><span class="line">Player.black 跳过</span><br></pre></td></tr></table></figure>
-<h6 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h6><ul>
-<li>《深度学习与围棋》第3章实现第一个围棋机器人，源码链接<a target="_blank" rel="noopener" href="https://github.com/maxpumperla/deep_learning_and_the_game_of_go">maxpumperla/deep_learning_and_the_game_of_go: Code and other material for the book “Deep Learning and the Game of Go” (github.com)</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/01/16/%E5%9B%B4%E6%A3%8B%E6%B8%B8%E6%88%8F%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%80%9D%E8%B7%AF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/16/hello-world/">Hello World</a>
-    </h1>
   
 
-        
-        <a href="/2023/01/16/hello-world/" class="archive-article-date">
-  	<time datetime="2023-01-16T12:28:26.214Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/01/16/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -527,8 +381,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
